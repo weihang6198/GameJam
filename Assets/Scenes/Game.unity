@@ -1311,7 +1311,7 @@ GameObject:
   - component: {fileID: 8806116506087179828}
   m_Layer: 0
   m_Name: SpikeGenerator
-  m_TagString: Untagged
+  m_TagString: SpikeGenerator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
