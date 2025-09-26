@@ -16,6 +16,7 @@ public class PlayerScript : MonoBehaviour
     bool isGrounded = false;
     bool isAlive = true;
     Rigidbody2D RB;
+    public float jetpackSpeed = 5.0f;
 
     public TextMeshProUGUI ScoreTxt;
     public TextMeshProUGUI HealthTxt;
@@ -38,13 +39,14 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         //ジャンプ
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-             if (isGrounded)
-            {
-                RB.AddForce(Vector2.up * JumpForce);
-                isGrounded = false;
-            }
+            RB.linearVelocity = new Vector2(RB.linearVelocity.x, jetpackSpeed);
+            // if (isGrounded)
+            //{
+            //    RB.AddForce(Vector2.up * JumpForce);
+            //    isGrounded = false;
+            //}
         }
         //スコアの表示
         if (isAlive)
@@ -93,6 +95,7 @@ public class PlayerScript : MonoBehaviour
         if (Health > 0)
         {
             Health -= amount;
+
         }
     }
     
