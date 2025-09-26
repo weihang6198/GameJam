@@ -9,8 +9,6 @@ public class CoinGenerator : MonoBehaviour
 
     }
 
-    void 
-
     // Update is called once per frame
     void Update()
     {
