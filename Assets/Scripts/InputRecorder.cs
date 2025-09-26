@@ -8,20 +8,14 @@ public class InputRecorder : MonoBehaviour
     private List<string> recordedKeyColors = new List<string>();
 
     // UIimage参照
-    public Image upArrowImage;
-    public Image downArrowImage;
-    public Image leftArrowImage;
-    public Image rightArrowImage;
+    public List<Image> KeyImages = new List<Image>();
 
     public Sprite KeyUp;
     public Sprite KeyDown;
     public Sprite KeyLeft;
     public Sprite KeyRight;
 
-    public Transform UpPoint;
-    public Transform DownPoint;
-    public Transform LeftPoint;
-    public Transform rightPoint;
+    public List<Transform> keyPoints = new List<Transform>(); 
 
     private Camera mainCamera;
     private int KeyCount = 0;
@@ -31,6 +25,7 @@ public class InputRecorder : MonoBehaviour
     {
         mainCamera = Camera.main;
         ClearInputHistory();
+        HideAllImages();
     }
 
     // Update is called once per frame
@@ -39,35 +34,33 @@ public class InputRecorder : MonoBehaviour
         // 矢印キーを検知
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            RecordInput("Red");
-            SetKeySpriteImage(upArrowImage, UpPoint, KeyUp);
-            KeyCount += 1;
-            Debug.Log("KeyCount:" + KeyCount);
+            HandleInput("Red", KeyUp);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            RecordInput("Green");
-            SetKeySpriteImage(downArrowImage, DownPoint, KeyDown);
-            KeyCount += 1;
+            HandleInput("Green", KeyDown);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            RecordInput("Blue");
-            SetKeySpriteImage(leftArrowImage, LeftPoint, KeyLeft);
-            KeyCount += 1;
+            HandleInput("Blue", KeyLeft);
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            RecordInput("Yellow");
-            SetKeySpriteImage(rightArrowImage, rightPoint, KeyRight);
-            KeyCount += 1;
+            HandleInput("Yellow", KeyRight);
         }
+    }
 
-        if(KeyCount >= 5)
+    // 入力処理を管理するメソッド
+    private void HandleInput(string KeyColor, Sprite keySprite)
+    {
+        if(KeyCount >= KeyImages.Count)
         {
-            HideAllImages();
+            ClearInputHistory();
         }
 
+        RecordInput(KeyColor);
+        SetKeySpriteImage(KeyImages[KeyCount], keyPoints[KeyCount], keySprite);
+        KeyCount++;
     }
 
     // UIを変更するメソッド
@@ -86,12 +79,13 @@ public class InputRecorder : MonoBehaviour
     // 画像を非表示にする
     private void HideAllImages()
     {
-        if(upArrowImage != null) upArrowImage.enabled = false;
-        if(downArrowImage != null) downArrowImage.enabled = false;
-        if(leftArrowImage != null) leftArrowImage.enabled = false;
-        if(rightArrowImage != null) rightArrowImage.enabled = false;
-
-        KeyCount = 0;
+        foreach (Image img in KeyImages)
+        {
+            if(img != null)
+            {
+                img.enabled = false;
+            }
+        }
     }
 
     // 入力情報をリストに記憶
@@ -113,5 +107,6 @@ public class InputRecorder : MonoBehaviour
         recordedKeyColors.Clear();
         Debug.Log("入力履歴をクリアしました");
         HideAllImages();
+        KeyCount = 0;
     }
 }
