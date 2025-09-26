@@ -7,7 +7,6 @@ public class ChangeManager : MonoBehaviour
 {
     [SerializeField] string[] order = { "Title", "Rule", "Game", "Result" };
 
-    public int currentSceneIndex = 0;
     private static ChangeManager instance;
 
     void Awake()
@@ -29,21 +28,22 @@ public class ChangeManager : MonoBehaviour
 
         if(PressSpaceKey)
         {
-            Debug.Log(order[currentSceneIndex]);
-            Invoke(nameof(ChangeScene), 0.5f);
+          
+           
+            ChangeScene();
         }
     }
 
     void ChangeScene()
     {
-        if (order.Length == 0) return;
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextIndex = currentIndex + 1;
 
-        string nextScene = order[currentSceneIndex];
-        Debug.Log("ƒV[ƒ“: " + nextScene);
+        if (nextIndex >= SceneManager.sceneCountInBuildSettings)
+            nextIndex = 0; // loop back to first scene (optional)
 
-        SceneManager.LoadScene(order[currentSceneIndex]);
+        SceneManager.LoadScene(nextIndex);
 
-        currentSceneIndex = (currentSceneIndex + 1) % order.Length;
     }
 }
 
