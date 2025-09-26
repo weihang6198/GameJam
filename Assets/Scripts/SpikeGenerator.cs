@@ -6,6 +6,7 @@ public class SpikeGenerator : MonoBehaviour
 
 {
     public GameObject spike;
+    public GameObject colorWall;
 
     public float MinSpeed;
     public float MaxSpeed;
@@ -13,12 +14,13 @@ public class SpikeGenerator : MonoBehaviour
 
     public float SpeedMultiplier;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    void Awake()
+    void Awake()
     {
         CurrentSpeed = MinSpeed;
         generateSpike();
+        GenerateColorWall(); // 最初の1回
     }
 
 
@@ -26,8 +28,8 @@ public class SpikeGenerator : MonoBehaviour
     public void GenerateNextSpikeWithGap()
 
     {
-        float randomWait = Random.Range(0.1f, 1.2f);
-        Invoke("generateSpike", randomWait);
+        //float randomWait = Random.Range(0.1f, 1.2f);
+        //Invoke("generateSpike", randomWait);
     }
 
     public void generateSpike()
@@ -48,5 +50,18 @@ public class SpikeGenerator : MonoBehaviour
             CurrentSpeed += SpeedMultiplier;
 
         }
+    }
+
+    public void GenerateColorWall()
+    {
+        GameObject WallIns = Instantiate(colorWall, transform.position, transform.rotation);
+        ColorWallParent wallScript = WallIns.GetComponent<ColorWallParent>();
+    }
+
+    public void GenerateNextColorWallWithGap()
+
+    {
+        float randomWait = Random.Range(0.1f, 1.2f);
+        Invoke("GenerateColorWall", randomWait);
     }
 }

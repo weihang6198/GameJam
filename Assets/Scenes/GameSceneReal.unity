@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 389.31, y: 227.5}
+  m_AnchoredPosition: {x: 275, y: 156}
   m_SizeDelta: {x: 339.389, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &141057653
@@ -818,7 +818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -447, y: 168.5}
+  m_AnchoredPosition: {x: -324, y: 97}
   m_SizeDelta: {x: 48.026, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &771011063
@@ -1044,11 +1044,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989fc5466cd911d47ac0867c9da7495d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Health: 0
-  MaxHealth: 5
-  JumpForce: 700
-  isGrounded: 0
+  Health: 10
+  MaxHealth: 10
   jetpackSpeed: 5
+  isGrounded: 0
   ScoreTxt: {fileID: 141057653}
   HealthTxt: {fileID: 1378094835}
 --- !u!50 &1250507617
@@ -1257,7 +1256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -389.31, y: 227.5}
+  m_AnchoredPosition: {x: -266.31, y: 156}
   m_SizeDelta: {x: 339.389, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378094835
@@ -1532,7 +1531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -314.1, y: 168.5}
+  m_AnchoredPosition: {x: -191.1, y: 97}
   m_SizeDelta: {x: 48.026, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580955664
@@ -1607,7 +1606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -379.6, y: 168.5}
+  m_AnchoredPosition: {x: -256.6, y: 97}
   m_SizeDelta: {x: 48.031, y: 48.001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1618136412
@@ -1682,7 +1681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -512.6, y: 168.5}
+  m_AnchoredPosition: {x: -389.59998, y: 97}
   m_SizeDelta: {x: 48.0279, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872836134
@@ -2036,7 +2035,6 @@ MonoBehaviour:
   MaxSpeed: 12
   CurrentSpeed: 0
   SpeedMultiplier: 0.00015
-  spawnPoint: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

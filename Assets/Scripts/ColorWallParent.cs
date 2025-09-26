@@ -18,7 +18,7 @@ public class ColorWallParent : MonoBehaviour
 
         for(int i = 0; i < mySpriteRenderer.Count; i++)
         {
-            int randomIndex = Random.Range(0, mySpriteRenderer.Count);
+            int randomIndex = Random.Range(0, sprites.Count);
 
             mySpriteRenderer[randomIndex].sprite = sprites[randomIndex];
         }
