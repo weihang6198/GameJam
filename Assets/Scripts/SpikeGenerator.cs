@@ -13,9 +13,12 @@ public class SpikeGenerator : MonoBehaviour
 
     public float SpeedMultiplier;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] GameObject[] SpawnPosition;
 
-    void Awake()
+    [SerializeField] Vector2 spawnSpikeInterval;
+    [SerializeField] Vector2 spikeRandomScale;
+    void Awake()
     {
         CurrentSpeed = MinSpeed;
         generateSpike();
@@ -26,20 +29,31 @@ public class SpikeGenerator : MonoBehaviour
     public void GenerateNextSpikeWithGap()
 
     {
-        float randomWait = Random.Range(0.1f, 1.2f);
+        float randomWait = Random.Range(spawnSpikeInterval.x, spawnSpikeInterval.y);
         Invoke("generateSpike", randomWait);
     }
 
     public void generateSpike()
 
     {
-        GameObject SpikeIns = Instantiate(spike, transform.position, transform.rotation);
+        int randomValue = Random.Range(0, 2); // 0 or 1
+
+        GameObject SpikeIns = Instantiate(spike, SpawnPosition[randomValue].transform.position, SpawnPosition[randomValue].transform.rotation);
+        Vector3 currentScale = SpikeIns.transform.localScale;
+
+        int randomScale = Random.Range((int)spikeRandomScale.x, (int)spikeRandomScale.y); // 0 or 1
+        SpikeIns.transform.localScale = new Vector3(
+        currentScale.x,
+        currentScale.y * randomScale,
+        currentScale.z
+    );
 
         SpikeIns.GetComponent<SpikeScript>().spikeGenerator = this;
+        //SpikeIns.GetComponent<SpikeScript>().Speed = MaxSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
+    // Update is called once per frame
+    void Update()
     {
         if (CurrentSpeed < MaxSpeed)
 

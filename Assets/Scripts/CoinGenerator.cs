@@ -31,9 +31,9 @@ public class CoinGenerator : MonoBehaviour
             GameObject coinIns = Instantiate(coin, position, Quaternion.identity);
 
             CoinScript coinScript = coinIns.GetComponent<CoinScript>();
-            coinScript.coinGenerator = this;
+           // coinScript.coinGenerator = this;
 
-            coinScript.isLeader = (coinIndex == 0);
+           // coinScript.isLeader = (coinIndex == 0);
         }
     }
 }
