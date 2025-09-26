@@ -9,7 +9,6 @@ TagManager:
   - NextLine
   - Undefined
   - Spike
-  - Coin
   layers:
   - Default
   - TransparentFX
