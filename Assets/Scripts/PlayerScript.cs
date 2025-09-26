@@ -11,7 +11,7 @@ public class PlayerScript : MonoBehaviour
     public int MaxHealth;
 
     //動き
-    public float JumpForce;
+    public float jetpackSpeed = 5f;
     [SerializeField]
     bool isGrounded = false;
     bool isAlive = true;
@@ -38,13 +38,9 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         //ジャンプ
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-             if (isGrounded)
-            {
-                RB.AddForce(Vector2.up * JumpForce);
-                isGrounded = false;
-            }
+            RB.linearVelocity = new Vector2(RB.linearVelocity.x, jetpackSpeed);
         }
         //スコアの表示
         if (isAlive)
