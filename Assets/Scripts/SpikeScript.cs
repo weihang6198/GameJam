@@ -5,13 +5,12 @@ using Vector2 = UnityEngine.Vector2;
 public class SpikeScript : MonoBehaviour
 {
     public SpikeGenerator spikeGenerator;
-
-
-    // Update is called once per frame
+   
     void Update()
     {
         transform.Translate(Vector2.left * spikeGenerator.CurrentSpeed * Time.deltaTime);
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,9 +19,20 @@ public class SpikeScript : MonoBehaviour
             spikeGenerator.GenerateNextSpikeWithGap();
         }
 
-         if (collision.gameObject.CompareTag("Finish"))
+        if (collision.gameObject.CompareTag("Finish"))
         {
             Destroy(this.gameObject);
+        }
+
+         if (collision.gameObject.CompareTag("Player"))
+        {
+
+             PlayerScript player = collision.gameObject.GetComponent<PlayerScript>();
+        if (player != null)
+        {
+            player.ReduceHealth(1); // Reduce health by 1
+        }
+           Destroy(this.gameObject);
         }
     }
 }

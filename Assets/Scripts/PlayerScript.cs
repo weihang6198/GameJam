@@ -5,42 +5,58 @@ using TMPro; // You must include this namespace
 public class PlayerScript : MonoBehaviour
 {
 
-    public float JumpForce;
-    float Score;
 
+    float Score;
+    public int Health;
+    public int MaxHealth;
+
+    //動き
+    public float JumpForce;
     [SerializeField]
     bool isGrounded = false;
     bool isAlive = true;
     Rigidbody2D RB;
 
-   public TextMeshProUGUI ScoreTxt;
+    public TextMeshProUGUI ScoreTxt;
+    public TextMeshProUGUI HealthTxt;
+
+    //初期setting
     private void Awake()
     {
         RB = GetComponent<Rigidbody2D>();
         Score = 0;
+         Health = MaxHealth;
     }
+
+    private void Start()
+    {
+       
+    } 
 
 
     // Update is called once per frame
     void Update()
     {
+        //ジャンプ
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // if (isGrounded)
+             if (isGrounded)
             {
                 RB.AddForce(Vector2.up * JumpForce);
                 isGrounded = false;
             }
         }
-
+        //スコアの表示
         if (isAlive)
         {
-            Score += Time.deltaTime * 4;
-            ScoreTxt.text = "SCORE:" + Score.ToString("F");
+
+            ShowHealth();
+            ShowScore();
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    //床にいるの確認
+       private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -50,12 +66,34 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.CompareTag("spike"))
+        if (collision.gameObject.CompareTag("Spike"))
         {
-            isAlive = false;
-            Time.timeScale = 0;
+            //isAlive = false;
+            //Time.timeScale = 0;
+            ReduceHealth(1);
         }
     }
-    
+
+    private void ShowHealth()
+    {
+
+        HealthTxt.text = "HEALTH:" + Health.ToString("F");
+
+    }
+
+    private void ShowScore()
+    {
+        Score += Time.deltaTime * 4;
+        ScoreTxt.text = "SCORE:" + Score.ToString("F");
+    }
+
+    public void ReduceHealth(int amount)
+    {
+        Debug.Log("reduce health");
+        if (Health > 0)
+        {
+            Health -= amount;
+        }
+    }
     
 }
