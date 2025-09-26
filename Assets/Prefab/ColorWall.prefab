@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 3208396023229714774}
   - component: {fileID: -7854476451034289105}
   m_Layer: 0
-  m_Name: Spike
+  m_Name: ColorWall
   m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
