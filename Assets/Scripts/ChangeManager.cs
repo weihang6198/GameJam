@@ -28,8 +28,6 @@ public class ChangeManager : MonoBehaviour
 
         if(PressSpaceKey)
         {
-          
-           
             ChangeScene();
         }
     }

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CoinScript : MonoBehaviour
 {
+
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +14,10 @@ public class CoinScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D()
+    {
+
     }
 }

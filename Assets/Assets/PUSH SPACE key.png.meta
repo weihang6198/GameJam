@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: eff037863fcaa444b827bd08d66c2a8e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1207319599234728737
+    second: PUSH SPACE key_0
+  - first:
+      213: -7491098322007532126
+    second: PUSH SPACE key_1
+  - first:
+      213: 4397616093479860973
+    second: PUSH SPACE key_2
+  - first:
+      213: 7163700422160442396
+    second: PUSH SPACE key_3
+  - first:
+      213: 773459021365344844
+    second: PUSH SPACE key_4
+  - first:
+      213: -2809052779868776881
+    second: PUSH SPACE key_5
+  - first:
+      213: 2445936279300146175
+    second: PUSH SPACE key_6
+  - first:
+      213: 4840299031464545610
+    second: PUSH SPACE key_7
+  - first:
+      213: -4133912156498420060
+    second: PUSH SPACE key_8
+  - first:
+      213: 5691718219246947604
+    second: PUSH SPACE key_9
+  - first:
+      213: 8256539442489002855
+    second: PUSH SPACE key_10
+  - first:
+      213: 4564300540977005881
+    second: PUSH SPACE key_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PUSH SPACE key_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 28
+        width: 95
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdc3f3d983dbe3fe0800000000000000
+      internalID: -1207319599234728737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUSH SPACE key_1
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 26
+        width: 98
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ad573304c54a0890800000000000000
+      internalID: -7491098322007532126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUSH SPACE key_2
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 28
+        width: 101
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dea78669988770d30800000000000000
+      internalID: 4397616093479860973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUSH SPACE key_3
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 28
+        width: 103
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c14603c34939a6360800000000000000
+      internalID: 7163700422160442396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUSH SPACE key_4
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 27
+        width: 101
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a7dc8c1e0ebba00800000000000000
+      internalID: 773459021365344844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUSH SPACE key_5
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 28
+        width: 94
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f461994316d3409d0800000000000000
+      internalID: -2809052779868776881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUSH SPACE key_6
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 28
+        width: 110
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff30dee3616b1f120800000000000000
+      internalID: 2445936279300146175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUSH SPACE key_7
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 28
+        width: 113
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4d8c19f2523c2340800000000000000
+      internalID: 4840299031464545610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUSH SPACE key_8
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 28
+        width: 91
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ae1e3bcbc461a6c0800000000000000
+      internalID: -4133912156498420060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUSH SPACE key_9
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 28
+        width: 88
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41d45db709b0dfe40800000000000000
+      internalID: 5691718219246947604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUSH SPACE key_10
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 26
+        width: 93
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76b0f8fb0ee159270800000000000000
+      internalID: 8256539442489002855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUSH SPACE key_11
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 9
+        width: 89
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935ce09c827a75f30800000000000000
+      internalID: 4564300540977005881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PUSH SPACE key_0: -1207319599234728737
+      PUSH SPACE key_1: -7491098322007532126
+      PUSH SPACE key_10: 8256539442489002855
+      PUSH SPACE key_11: 4564300540977005881
+      PUSH SPACE key_2: 4397616093479860973
+      PUSH SPACE key_3: 7163700422160442396
+      PUSH SPACE key_4: 773459021365344844
+      PUSH SPACE key_5: -2809052779868776881
+      PUSH SPACE key_6: 2445936279300146175
+      PUSH SPACE key_7: 4840299031464545610
+      PUSH SPACE key_8: -4133912156498420060
+      PUSH SPACE key_9: 5691718219246947604
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
