@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class InputRecorder : MonoBehaviour
 {
-    private List<string> recordedKeyColors = new List<string>();
+    //private List<string> recordedKeyColors = new List<string>();
+    //record player input on color wall qte event
+    public List<int> playerKeyInput = new List<int>();
 
     // UIimage�Q��
     public List<Image> KeyImages = new List<Image>();
@@ -15,7 +17,7 @@ public class InputRecorder : MonoBehaviour
     public Sprite KeyLeft;
     public Sprite KeyRight;
 
-    public List<Transform> keyPoints = new List<Transform>(); 
+    public List<Transform> keyPoints = new List<Transform>();
 
     private Camera mainCamera;
     private int KeyCount = 0;
@@ -34,41 +36,44 @@ public class InputRecorder : MonoBehaviour
         // ���L�[�����m
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            HandleInput("Red", KeyUp);
+            HandleInput(0, KeyUp);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            HandleInput("Green", KeyDown);
+            HandleInput(1, KeyRight);
+        }
+         else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            HandleInput(2, KeyDown);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            HandleInput("Blue", KeyLeft);
+            HandleInput(3, KeyLeft);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            HandleInput("Yellow", KeyRight);
-        }
+       
+
+       
     }
 
-  
-    private void HandleInput(string KeyColor, Sprite keySprite)
+
+    private void HandleInput(int playerInput, Sprite keySprite)
     {
-        if(KeyCount >= KeyImages.Count)
+        if (KeyCount >= KeyImages.Count)
         {
             ClearInputHistory();
         }
 
-        RecordInput(KeyColor);
+        RecordInput(playerInput);
         SetKeySpriteImage(KeyImages[KeyCount], keyPoints[KeyCount], keySprite);
         KeyCount++;
     }
 
-    
+
     private void SetKeySpriteImage(Image image, Transform displayPoint, Sprite sprite)
     {
-        if(image != null && displayPoint != null && mainCamera != null)
+        if (image != null && displayPoint != null && mainCamera != null)
         {
-          
+
             Vector3 screenPos = mainCamera.WorldToScreenPoint(displayPoint.position);
             image.rectTransform.position = screenPos;
             image.sprite = sprite;
@@ -76,37 +81,68 @@ public class InputRecorder : MonoBehaviour
         }
     }
 
-       private void HideAllImages()
+    private void HideAllImages()
     {
         foreach (Image img in KeyImages)
         {
-            if(img != null)
+            if (img != null)
             {
                 img.enabled = false;
             }
         }
     }
 
-      private void RecordInput(string keyColor)
+    private void RecordInput(int playerInput)
     {
-        recordedKeyColors.Add(keyColor);
-        Debug.Log("���͗����ɒǉ��F" + keyColor);
+        playerKeyInput.Add(playerInput);
+        //Debug.Log("���͗����ɒǉ��F" + keyColor);
     }
 
-   
-    public List<string> GetRecordedInput()
+
+    public List<int> GetRecordedInput()
     {
-        return recordedKeyColors;
+        return playerKeyInput;
     }
 
-  
+
     public void ClearInputHistory()
     {
-        recordedKeyColors.Clear();
-        Debug.Log("���͗������N���A���܂���");
+        playerKeyInput.Clear();
+       
         HideAllImages();
         KeyCount = 0;
     }
+
+public bool CompareInput(List<int> ColorWallIndices)
+{
+    // Print both lists before comparing
+    Debug.Log("colorWallRandomIndices: " + string.Join(", ", ColorWallIndices));
+    Debug.Log("playerList: " + string.Join(", ", playerKeyInput));
+
+    // If lengths don't match, they can't be equal
+    if (ColorWallIndices.Count != playerKeyInput.Count)
+    {
+        ClearInputHistory();
+        Debug.Log("incorrect answer (length mismatch)");
+        return false;
+    }
+
+    // Compare each element
+    for (int i = 0; i < ColorWallIndices.Count; i++)
+    {
+        if (ColorWallIndices[i] != playerKeyInput[i])
+        {
+            Debug.Log("incorrect answer (element mismatch at index " + i + ")");
+            ClearInputHistory();
+            return false;
+        }
+    }
+
+    // All elements matched
+    ClearInputHistory();
+    Debug.Log("correct answer");
+    return true;
+}
 }
 
 /*
