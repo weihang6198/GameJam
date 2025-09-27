@@ -607,6 +607,7 @@ MonoBehaviour:
   - {fileID: 1588683203579269461, guid: 8878b9487632c7048859397c2db0bb4a, type: 3}
   - {fileID: -1459031841638584925, guid: 8f080a07767a9a640971cf3cc1543186, type: 3}
   - {fileID: -4600088032286116873, guid: 1f6881b5f585b6848a9f531ddfd84840, type: 3}
+  speed: 0
 --- !u!1 &8784870200681465365
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +621,7 @@ GameObject:
   - component: {fileID: 3108623611536124643}
   - component: {fileID: 3208396023229714774}
   - component: {fileID: -7854476451034289105}
+  - component: {fileID: 1144279318968212584}
   m_Layer: 0
   m_Name: ColorWall
   m_TagString: Spike
@@ -785,9 +787,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8784870200681465365}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e274cd1baff019c42b11e8ddfdc6d5c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
   spikeGenerator: {fileID: 0}
+--- !u!114 &1144279318968212584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784870200681465365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c2e1af0b9ee764da375d7bd8945731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColorWallParent
+  Wall: []
+  mySpriteRenderer: []
+  sprites: []
+  speed: 0

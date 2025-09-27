@@ -7,7 +7,7 @@ public class InputRecorder : MonoBehaviour
 {
     private List<string> recordedKeyColors = new List<string>();
 
-    // UIimageQÆ
+    // UIimageï¿½Qï¿½ï¿½
     public List<Image> KeyImages = new List<Image>();
 
     public Sprite KeyUp;
@@ -31,7 +31,7 @@ public class InputRecorder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // –îˆóƒL[‚ğŒŸ’m
+        // ï¿½ï¿½ï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½m
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             HandleInput("Red", KeyUp);
@@ -50,7 +50,7 @@ public class InputRecorder : MonoBehaviour
         }
     }
 
-    // “ü—Íˆ—‚ğŠÇ—‚·‚éƒƒ\ƒbƒh
+  
     private void HandleInput(string KeyColor, Sprite keySprite)
     {
         if(KeyCount >= KeyImages.Count)
@@ -63,12 +63,12 @@ public class InputRecorder : MonoBehaviour
         KeyCount++;
     }
 
-    // UI‚ğ•ÏX‚·‚éƒƒ\ƒbƒh
+    
     private void SetKeySpriteImage(Image image, Transform displayPoint, Sprite sprite)
     {
         if(image != null && displayPoint != null && mainCamera != null)
         {
-            // ƒ[ƒ‹ƒhÀ•W‚ğƒXƒNƒŠ[ƒ“À•W‚É•ÏŠ·‚µ‚ÄUI‚ÌˆÊ’u‚ğŒˆ‚ß‚é
+          
             Vector3 screenPos = mainCamera.WorldToScreenPoint(displayPoint.position);
             image.rectTransform.position = screenPos;
             image.sprite = sprite;
@@ -76,8 +76,7 @@ public class InputRecorder : MonoBehaviour
         }
     }
 
-    // ‰æ‘œ‚ğ”ñ•\¦‚É‚·‚é
-    private void HideAllImages()
+       private void HideAllImages()
     {
         foreach (Image img in KeyImages)
         {
@@ -88,25 +87,30 @@ public class InputRecorder : MonoBehaviour
         }
     }
 
-    // “ü—Íî•ñ‚ğƒŠƒXƒg‚É‹L‰¯
-    private void RecordInput(string keyColor)
+      private void RecordInput(string keyColor)
     {
         recordedKeyColors.Add(keyColor);
-        Debug.Log("“ü—Í—š—ğ‚É’Ç‰ÁF" + keyColor);
+        Debug.Log("ï¿½ï¿½ï¿½Í—ï¿½ï¿½ï¿½ï¿½É’Ç‰ï¿½ï¿½F" + keyColor);
     }
 
-    // ‹L˜^‚³‚ê‚½—š—ğ‚ğ•Ô‚·
+   
     public List<string> GetRecordedInput()
     {
         return recordedKeyColors;
     }
 
-    // —š—ğ‚ğƒNƒŠƒA‚·‚éƒƒ\ƒbƒh
+  
     public void ClearInputHistory()
     {
         recordedKeyColors.Clear();
-        Debug.Log("“ü—Í—š—ğ‚ğƒNƒŠƒA‚µ‚Ü‚µ‚½");
+        Debug.Log("ï¿½ï¿½ï¿½Í—ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
         HideAllImages();
         KeyCount = 0;
     }
 }
+
+/*
+todo 
+make the atari hantei for the color wall system 
+
+*/
