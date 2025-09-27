@@ -22,10 +22,14 @@ public class PlayerScript : MonoBehaviour
     public TextMeshProUGUI ScoreTxt;
     public TextMeshProUGUI HealthTxt;
 
+    public AudioClip damageSound;
+    private AudioSource audioSource;
+
     //初期setting
     private void Awake()
     {
         RB = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         Score = 0;
         Health = MaxHealth;
     }
@@ -99,6 +103,8 @@ public class PlayerScript : MonoBehaviour
         Debug.Log("reduce health");
         if (Health > 0)
         {
+            if (damageSound != null && !audioSource != null) 
+                damageSound.Play();
             Health -= amount;
             if (Health <= 0) 
             {
