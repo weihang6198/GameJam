@@ -5,19 +5,12 @@ public class CoinGenerator : MonoBehaviour
     public GameObject coin;
     public int coinCount = 4;
     public float coinSpacing = 1.0f;
-    public float currentSpeed = 2.0f;
 
     public Transform[] spawnPoints;
 
     void Awake()
     {
-        NextSpawnLinedCoin();
-    }
-
-    public void NextSpawnLinedCoin()
-    {
-        float randomWait = Random.Range(2.0f, 4.0f);
-        Invoke(nameof(MakeLinedCoin), randomWait);
+        MakeLinedCoin();
     }
 
     void MakeLinedCoin()
@@ -25,15 +18,27 @@ public class CoinGenerator : MonoBehaviour
         int spawnIndex = Random.Range(0, spawnPoints.Length);
         Vector3 basePosition = spawnPoints[spawnIndex].position;
 
+        float coinWidth = coin.GetComponent<SpriteRenderer>().bounds.size.x;
+
         for (int coinIndex = 0; coinIndex < coinCount; coinIndex++)
         {
-            Vector3 position = basePosition + new Vector3(coinIndex * coinSpacing, 0, 0);
-            GameObject coinIns = Instantiate(coin, position, Quaternion.identity);
+            Vector3 position = basePosition + new Vector3(coinIndex * (coinWidth + coinSpacing), 0, 0);
+            GameObject CoinIns = Instantiate(coin, position, transform.rotation);
+            CoinIns.GetComponent<CoinScript>().coinGenerator = this;
 
-            CoinScript coinScript = coinIns.GetComponent<CoinScript>();
+            CoinScript coinScript = CoinIns.GetComponent<CoinScript>();
             coinScript.coinGenerator = this;
 
-            coinScript.isLeader = (coinIndex == 0);
+            if (coinIndex == coinCount - 1)   
+            {
+                coinScript.isLeader = true;
+            }
         }
+    }
+
+    public void NextSpawnLinedCoin()
+    {
+        float randomWait = Random.Range(2.0f, 4.0f);
+        Invoke("MakeLinedCoin", randomWait);
     }
 }
