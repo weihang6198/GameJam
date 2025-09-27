@@ -6,6 +6,14 @@ public class CoinScript : MonoBehaviour
     public float currentSpeed = 4.0f;
     public bool isLeader = false;
 
+    public AudioClip coinSound;
+    private AudioSource audioSource;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if (coinGenerator != null)
@@ -24,7 +32,13 @@ public class CoinScript : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Player")) 
         {
-            Destroy(gameObject);
+            if (audioSource != null && coinSound != null)
+                audioSource.PlayOneShot(coinSound);
+
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Collider2D>().enabled = false;
+
+            Destroy(gameObject, coinSound.length);
         }
     }
 }
