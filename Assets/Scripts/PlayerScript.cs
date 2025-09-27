@@ -1,11 +1,13 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro; // You must include this namespace
+using FirstGearGames.SmoothCameraShaker;
 public class PlayerScript : MonoBehaviour
 {
 
-
+    public ParticleSystem jetpackParticles; // assign in Inspector
+    public ParticleSystem FireParticles; // assign in Inspector
+    public ShakeData explosionShakeData;
     float Score;
     public int Health;
     public int MaxHealth;
@@ -25,13 +27,13 @@ public class PlayerScript : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
         Score = 0;
-         Health = MaxHealth;
+        Health = MaxHealth;
     }
 
     private void Start()
     {
-       
-    } 
+
+    }
 
 
     // Update is called once per frame
@@ -40,7 +42,15 @@ public class PlayerScript : MonoBehaviour
         //ジャンプ
         if (Input.GetKey(KeyCode.Space))
         {
+            // CameraShake();
+            if (!jetpackParticles.isPlaying)
+                jetpackParticles.Play();
             RB.linearVelocity = new Vector2(RB.linearVelocity.x, jetpackSpeed);
+        }
+        else
+        {
+            if (jetpackParticles.isPlaying)
+                jetpackParticles.Stop();
         }
         //スコアの表示
         if (isAlive)
@@ -52,10 +62,11 @@ public class PlayerScript : MonoBehaviour
     }
 
     //床にいるの確認
-       private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+          
             if (!isGrounded)
             {
                 isGrounded = true;
@@ -91,5 +102,23 @@ public class PlayerScript : MonoBehaviour
             Health -= amount;
         }
     }
-    
+
+    public void CameraShake()
+    {
+        Debug.Log("camera shake ");
+        if (explosionShakeData != null)
+        {
+            CameraShakerHandler.Shake(explosionShakeData);
+        }
+        else
+        {
+            Debug.Log("camera shake empty");
+        }
+
+    }
+
+    public void ExplosionParticle()
+    {
+        FireParticles.Play();
+    }
 }

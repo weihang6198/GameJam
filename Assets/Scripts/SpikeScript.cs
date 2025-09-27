@@ -44,7 +44,8 @@ public class SpikeScript : MonoBehaviour
             {
 
                 player.ReduceHealth(1); // Reduce health by 1
-
+                player.CameraShake();
+                player.ExplosionParticle();
             }
 
             Destroy(this.gameObject);
