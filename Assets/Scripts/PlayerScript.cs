@@ -100,6 +100,10 @@ public class PlayerScript : MonoBehaviour
         if (Health > 0)
         {
             Health -= amount;
+            if (Health <= 0) 
+            {
+                FindObjectOfType<ChangeManager>().resultOrder = true;
+            }
         }
     }
 
